@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h3>餅乾的To-do-list</h3>
+    </header>
+
+    <section>
+      <input type="text" />
+      <div class="to-do-input">
+        <ul>
+          <li>記得吃早餐</li>
+          <li>記得吃午餐</li>
+          <li>記得吃晚餐</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>copyright@2022</footer>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      background-color: aliceblue;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header h3,
+    footer {
+      background-color: rgb(181, 222, 255);
+      padding: 0.5rem;
+    }
+
+    section {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .to-do-input {
+      padding: 1rem;
+      box-shadow: 8px 10px 26px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 8px 10px 26px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 8px 10px 26px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    input {
+      display: block;
+      margin: 0.2rem;
+      width: 300px;
+      height: 35px;
+      font-size: 30px;
+      margin-bottom: 1rem;
+    }
+
+    .to-do-input ul li {
+      font-size: 24px;
+    }
+  </style>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h3>餅乾的To-do-list</h3>
+    </header>
+
+    <section>
+      <div class="to-do-input">
+        <input type="text" />
+        <ul>
+          <li>記得吃早餐</li>
+          <li>記得吃午餐</li>
+          <li>記得吃晚餐</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>copyright@2022</footer>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      background-color: aliceblue;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header h3,
+    footer {
+      background-color: rgb(181, 222, 255);
+      padding: 0.5rem;
+    }
+
+    section {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .to-do-input {
+      padding: 1rem;
+    }
+  </style>
+</html>
