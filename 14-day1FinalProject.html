@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6-beautiful</title>
+    <title>Day1project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,13 +18,9 @@
     </header>
 
     <section>
-      <input type="text" />
-      <div class="to-do-input">
-        <ul>
-          <li>記得吃早餐</li>
-          <li>記得吃午餐</li>
-          <li>記得吃晚餐</li>
-        </ul>
+      <input type="text" id="todoInput" />
+      <div class="todoList">
+        <ul></ul>
       </div>
     </section>
 
@@ -77,4 +73,36 @@
       font-size: 24px;
     }
   </style>
+  <script>
+    let data = [];
+    let toDoInput = document.getElementById("todoInput");
+    let todoList = document.querySelector(".todoList ul");
+
+    //從local storage建立資料物件
+    let jsonData = localStorage.getItem("todo");
+
+    if (jsonData) data = JSON.parse(jsonData);
+
+    //網頁載入時將資料新增在畫面上
+    data.forEach((el) => {
+      const newTodoItem = document.createElement("li");
+      newTodoItem.innerText = el;
+      todoList.appendChild(newTodoItem);
+    });
+
+    toDoInput.addEventListener("keyup", (event) => {
+      if (event.key === "Enter") {
+        //加入dom
+        const inputValue = event.target.value;
+        const newTodoItem = document.createElement("li");
+        event.target.value = "";
+        newTodoItem.innerText = inputValue;
+        todoList.appendChild(newTodoItem);
+
+        //加入data並儲存
+        data.push(inputValue);
+        localStorage.setItem("todo", JSON.stringify(data));
+      }
+    });
+  </script>
 </html>

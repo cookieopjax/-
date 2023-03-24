@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8-array</title>
+  </head>
+  <body></body>
+  <style></style>
+  <script>
+    //array
+    let arr = ["Apple", "Banana", "star", "burst", "ten"];
+    console.log(arr.length);
+
+    arr.push(666);
+    console.log(arr);
+
+    //array slice
+    let newArr = arr.slice(2, 5); //2, 3, 4 to new array
+    console.log(newArr);
+
+    //array.splice(start, deleteCount, item1, item2, ...)
+    arr.splice(1, 2, "new1", "new2");
+    console.log(arr);
+
+    arr.splice(1, 2, ["newnew1", "newnew2"]);
+    console.log(arr);
+
+    //destructuring an array
+    const [x, y, z] = [1, 2, 3];
+    console.log(x); //1
+
+    //rest parameter
+    const [x1, ...y1] = [1, 2, 3];
+    console.log(y1); //[2, 3]
+  </script>
+</html>

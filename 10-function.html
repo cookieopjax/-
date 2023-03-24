@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-function</title>
+  </head>
+  <body></body>
+  <style></style>
+  <script>
+    //function is just a object
+
+    //function declaration
+    function sum(a, b) {
+      return a + b;
+    }
+
+    //function expression
+    let sum2 = function () {
+      return a + b;
+    };
+    //Almost identical, with a slight difference, which we will not discuss for now.
+
+    //------arrow function-----
+    let callSomeone = (someone) => {
+      return someone + "吃飯了";
+    };
+
+    // 縮寫，單一行陳述不需要 {}
+    let callSomeone2 = (someone) => someone + "吃飯了";
+
+    // 只有一個參數可以不加括號
+    let callSomeone3 = (someone) => someone + "吃飯了";
+
+    // 沒有參數時，一定要有括號
+    let callSomeone4 = () => "小明" + "吃飯了";
+
+    //-----function in Object-----
+    let obj = {
+      name: "Cookie",
+      run: function () {
+        console.log("run run run !");
+      },
+    };
+
+    obj.run();
+
+    //shorthand for declaring function
+    let obj3 = {
+      name: "Cookie",
+      run() {
+        console.log("run run run !");
+      },
+    };
+
+    //arrow function ok !
+    let obj2 = {
+      name: "Mandy",
+      run: () => {
+        console.log("run run run 2!");
+      },
+    };
+
+    obj2.run();
+  </script>
+</html>

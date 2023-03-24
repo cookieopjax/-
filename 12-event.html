@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <body>
+    <h1>Hello Everyone</h1>
+
+    <input class="input1" type="text" />
+  </body>
+  <style></style>
+  <script>
+    let ele = document.getElementsByTagName("h1");
+    console.log(ele);
+    ele[0].addEventListener("click", function (e) {
+      alert("dont touch me");
+    });
+
+    let inputEle = document.getElementsByClassName("input1");
+    inputEle[0].addEventListener("input", function (e) {
+      console.log(inputEle[0].value);
+    });
+  </script>
+</html>

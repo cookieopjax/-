@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+  </head>
+  <body>
+    <h1>Hello Everyone</h1>
+  </body>
+  <style></style>
+  <script>
+    let data = [
+      {
+        id: 1,
+        name: "cookie",
+        phone: "0909093213",
+      },
+      {
+        id: 2,
+        name: "rose",
+        phone: "0909093213",
+      },
+    ];
+
+    localStorage.setItem("person", JSON.stringify(data));
+
+    let test = localStorage.getItem("person");
+    console.log(test);
+    console.log(JSON.parse(test));
+  </script>
+</html>

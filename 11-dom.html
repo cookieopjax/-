@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-dom</title>
+  </head>
+  <body>
+    <h1>Hello Everyone</h1>
+    <div id="mainArea">
+      <p>Don't touch me !</p>
+      <p>You are so cool bro</p>
+    </div>
+  </body>
+  <style></style>
+  <script>
+    //DOM
+
+    // your browser will automatically create window object
+    console.log(window);
+    console.log(window.document);
+
+    console.log(window.console);
+    window.console.log("123");
+
+    let mainAreaEle = document.getElementById("mainArea");
+    console.log(mainAreaEle.children);
+    mainAreaEle.children[0].innerText = "change to this ~~";
+  </script>
+</html>

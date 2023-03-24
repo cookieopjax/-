@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9-object</title>
+  </head>
+  <body></body>
+  <style></style>
+  <script>
+    let me = {
+      firstName: "Mike",
+      lastName: "Lee",
+      age: 30,
+    };
+
+    //get and set object value
+    console.log(me.firstName);
+    me.lastName = "Wang";
+    console.log(me["lastName"]); //加分號
+
+    //Destructing an Object
+    //let firstName = me.firstName;
+    //equals to...
+    let { firstName } = me;
+    console.log("Destructing Variable : " + firstName);
+
+    //Spread Operator
+    const params = ["hello", true, 7];
+    const other = [1, 2, ...params]; // [ 1, 2, "hello", true, 7 ]
+  </script>
+</html>
