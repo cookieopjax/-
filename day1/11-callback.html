@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback</title>
+  </head>
+  <body></body>
+  <style></style>
+  <script>
+    // setTimeout(function, time)
+    setTimeout(() => {
+      console.log("一秒過ㄌ");
+    }, 1000);
+
+    // guess what is gonna happened
+    let data;
+    setTimeout(() => {
+      data = { id: 1, name: "John" };
+    }, 1000);
+
+    console.log("data is: ", data);
+
+    //callback function
+    function A(Fn) {
+      console.log("This is function A");
+      Fn();
+    }
+
+    function B() {
+      console.log("This is function B");
+    }
+    A(B);
+
+    //use callback function to handle this
+    function fetchData(callback) {
+      setTimeout(function () {
+        const data = { id: 1, name: "John" };
+        callback(data);
+      }, 1000);
+    }
+
+    function processData(data) {
+      console.log("Received data: ", data);
+    }
+
+    fetchData(processData);
+  </script>
+</html>

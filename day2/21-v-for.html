@@ -8,21 +8,24 @@
     <title>Vue Hello world</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <p v-for="(item,index) in data">{{index}} {{item}}</p>
+
+      <input type="text" v-for="(item, index) in data" :placeholder="item" />
+    </div>
   </body>
 
   <script>
-    const { createApp } = Vue;
-
+    const { createApp } = Vue; //class-9
     const app = createApp({
       data() {
         return {
-          message: "Hello Vue!",
+          personNum: 1,
+          data: ["mango", "trivago", "shit"],
         };
       },
     });
 
-    console.log(app);
     app.mount("#app");
   </script>
 </html>

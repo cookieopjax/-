@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body></body>
+  <style></style>
+  <script>
+    //create a promise
+    function fetchData() {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          const data = { id: 1, name: "John" };
+          resolve(data);
+        }, 3000);
+      });
+    }
+
+    //use promise
+    fetchData().then((data) => {
+      console.log(data);
+    });
+
+    fetchData()
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+      .then((data2) => {
+        console.log(data2);
+      });
+  </script>
+</html>

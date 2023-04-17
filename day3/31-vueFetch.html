@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue Hello world</title>
+  </head>
+  <body>
+    <!-- 文本插值 -->
+    <div id="app">
+      <h1>台中市天氣</h1>
+      <div v-for="item in data">
+        <p>
+          {{item.startTime}} 到 {{item.endTime}}的天氣為 :
+          {{item.parameter.parameterName}}
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const { createApp } = Vue; //class-9
+    const app = createApp({
+      data() {
+        return {
+          data: [],
+        };
+      },
+      created() {
+        fetch(
+          "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-4F7DF772-FF81-4F8E-B07E-CFECE66CD405&locationName=&elementName=Wx"
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((json) => {
+            this.data =
+              json["records"]["location"][11]["weatherElement"][0]["time"];
+            console.log(data);
+          })
+          .catch((error) => console.log(error));
+      },
+    });
+
+    console.log(app);
+    app.mount("#app");
+  </script>
+</html>
